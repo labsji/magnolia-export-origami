@@ -1,0 +1,44 @@
+# Automatically generated dialog with few most often used fields (text, right, link, DAM image, multivalue, link to app, select). Feel free to modify them for your specific component.
+
+label: say-it-with-origami
+form:
+  properties:
+    title:
+      $type: textField
+      label: Title
+      i18n: true
+    image:
+      label: Image
+      $type: damLinkField
+    caption:
+      $type: textField
+      label: Image Caption
+      i18n: true
+    desc:
+      label: Description
+      $type: richTextField
+      i18n: true
+    internalLink:
+      label: Link
+      $type: pageLinkField
+    categories:
+      label: Categories
+      $type: jcrMultiValueField
+      field:
+        $type: linkField
+        label: ''
+        datasource:
+          $type: jcrDatasource
+          workspace: category
+    option:
+      label: Option
+      $type: comboBoxField
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: a
+            label: A
+            value: a
+          - name: b
+            label: B
+            value: b

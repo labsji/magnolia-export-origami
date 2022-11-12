@@ -1,0 +1,4 @@
+title: say-it-with-origami
+renderType: freemarker
+templateScript: /magnolia-export-origami/templates/components/say-it-with-origami.ftl
+dialog: magnolia-export-origami:components/say-it-with-origami

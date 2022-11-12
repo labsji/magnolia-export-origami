@@ -1,0 +1,11 @@
+title: segment
+templateScript: /magnolia-export-origami/templates/pages/segment.ftl
+renderType: freemarker
+dialog: magnolia-export-origami:pages/segment
+visible: true
+areas:
+  main:
+    availableComponents:
+      origami:
+        id: magnolia-export-origami:components/say-it-with-origami
+

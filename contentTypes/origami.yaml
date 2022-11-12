@@ -1,0 +1,56 @@
+# Automatically generated contentType demonstrates usage of the common properties.
+# Modify them to match your requirements.
+datasource:
+    workspace: origami
+
+    # Optionally configure a custom namespace. (Replace [myNamespace] everywhere.)
+    # This namespace can then be used below for the nodetype.
+    # namespaces:
+    #   [myNamespace]: https://www.[myDomain.com]/jcr/1.0/[myNamespace]
+    autoCreate: true
+
+model:
+    # Optionally supply a specific nodetype, otherwise 'mgnl:content' will be used.
+    # nodeType: [myNamespace]:origami
+    properties:
+    - name: title
+      label: Title
+      type: String
+      required: true
+      i18n: true
+    - name: birthday
+      label: Birthday
+      type: Date
+    - name: member
+      label: Is a member
+      type: Boolean  #Types 'Decimal', 'Long' and 'Double' are also available.    
+
+    - name: phoneNumbers
+      label: Phone Numbers
+      type: PhoneNumber
+      multiple: true
+    - name: billingAddress
+      label: Billing Address
+      type: Address
+    - name: shippingAddress
+      label: Shipping Address
+      type: Address
+
+    subModels:
+    - name: PhoneNumber
+      properties:
+      - name: title
+        label: Title
+      - name: number
+        label: Number
+
+    - name: Address
+      properties:
+      - name: street
+        label: Street
+      - name: city
+        label: City
+      - name: postalCode
+        label: Postal Code
+      - name: country
+        label: Country
