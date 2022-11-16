@@ -25,43 +25,10 @@
     [#-- uncomment next line to use resfn templating functions to load all css which matches a globbing pattern --]
       [#-- ${resfn.css(["/magnolia-export-origami/.*css"])!} --]
   </head>
-  <body class="segment ${cmsfn.language()}">
+  <body class="cubic-origami ${cmsfn.language()}">
 
     <div class="container">
-      <h1>segment works!</h1>
-	[@cms.area name="main"/]
-	<table>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td>Inverted Text Here</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td>Content Text Here</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-	</table>
+      <h1>cubic-origami works!</h1>
     </div>
 
     [#-- use resfn to load all js which matches the globbing pattern or link resources manually or via theme --]

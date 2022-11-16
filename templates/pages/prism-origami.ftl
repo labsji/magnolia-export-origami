@@ -25,46 +25,41 @@
     [#-- uncomment next line to use resfn templating functions to load all css which matches a globbing pattern --]
       [#-- ${resfn.css(["/magnolia-export-origami/.*css"])!} --]
   </head>
-  <body class="segment ${cmsfn.language()}">
+  <body class="prism-origami ${cmsfn.language()}">
 
     <div class="container">
-      <h1>segment works!</h1>
-	[@cms.area name="main"/]
+      <h1>prism-origami works!</h1>
 	<table>
+	 [#if content.printgrouping?has_content && content.printgrouping?size > 0]
+	   [#list content.printgrouping as item]
+	     [#assign origami = cmsfn.contentById(item, "origami")!]
+	     <span class="label label-default">${origami.name!origami.@name!}</span>
 		<tr>
 			<td></td>
-			<td></td>
+			<td>
+			  [#if origami.title?has_content]
+			    <h2>${origami.title!}</h2>
+			  [/#if]
+			  [#if origami.image?has_content]
+			    [#-- Image rendering macro call here --] 
+			  [/#if]
+			 </td>
+			 <td>
+			  [#if origami.description?has_content]
+			    <p>${origami.description!}</p>
+			  [/#if]
+			 </td>
 			<td></td>
 			<td></td>
 		</tr>
-		<tr>
-			<td></td>
-			<td>Inverted Text Here</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td>Content Text Here</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-	</table>
+	   [/#list]
+	 [/#if]
+        </table>
     </div>
 
     [#-- use resfn to load all js which matches the globbing pattern or link resources manually or via theme --]
     [#-- ${resfn.js(["/magnolia-export-origami/.*js"])!} --]
+
+	[@cms.area name="main"/]
   </body>
 </html>

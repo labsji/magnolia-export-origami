@@ -1,0 +1,58 @@
+label: prism-origami
+form:
+  properties:
+    title:
+      $type: textField
+      label: Title
+      i18n: true
+    navigationTitle:
+      $type: textField
+      label: Navigation title
+      i18n: true
+    windowTitle:
+      $type: textField
+      label: Window title
+      i18n: true
+    hideInNav:
+      $type: checkBoxField
+      defaultValue: false
+      label: Hide in navigation
+      buttonLabel: Hide
+    keywords:
+      $type: textField
+      label: Keywords
+      i18n: true
+      rows: 3
+    description:
+      $type: textField
+      label: Description
+      i18n: true
+      rows: 5
+    printgrouping:
+      label: PrintGrouping
+      $type: jcrMultiValueField
+      field:
+        $type: linkField
+        label: ''
+        datasource:
+          $type: jcrDatasource
+          workspace: origami
+  layout:
+    $type: tabbedLayout
+    tabs:
+      tabMain:
+        label: Main tab
+        fields:
+          - name: title
+          - name: navigationTitle
+          - name: windowTitle
+          - name: hideInNav
+      tabMeta:
+        label: Metadata
+        fields:
+          - name: keywords
+          - name: description
+      tabPrintGrouping:
+        label: PrintGrouping
+        fields:
+          - name: printgrouping

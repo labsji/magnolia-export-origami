@@ -1,0 +1,6 @@
+title: cubic-origami
+templateScript: /magnolia-export-origami/templates/pages/cubic-origami.ftl
+renderType: freemarker
+dialog: magnolia-export-origami:pages/cubic-origami
+visible: true
+

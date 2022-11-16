@@ -21,15 +21,6 @@ form:
     internalLink:
       label: Link
       $type: pageLinkField
-    categories:
-      label: Categories
-      $type: jcrMultiValueField
-      field:
-        $type: linkField
-        label: ''
-        datasource:
-          $type: jcrDatasource
-          workspace: category
     option:
       label: Option
       $type: comboBoxField

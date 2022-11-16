@@ -1,0 +1,6 @@
+title: tetra-origami
+templateScript: /magnolia-export-origami/templates/pages/tetra-origami.ftl
+renderType: freemarker
+dialog: magnolia-export-origami:pages/tetra-origami
+visible: true
+

@@ -1,0 +1,6 @@
+title: prism
+templateScript: /magnolia-export-origami/templates/pages/prism.ftl
+renderType: freemarker
+dialog: magnolia-export-origami:pages/prism
+visible: true
+

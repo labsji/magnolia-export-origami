@@ -1,0 +1,12 @@
+title: prism-origami
+templateScript: /magnolia-export-origami/templates/pages/prism-origami.ftl
+renderType: freemarker
+dialog: magnolia-export-origami:pages/prism-origami
+visible: true
+
+areas:
+  main:
+    availableComponents:
+      origami:
+        id: magnolia-export-origami:components/say-it-with-origami
+

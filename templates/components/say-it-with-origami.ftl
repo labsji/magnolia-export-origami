@@ -1,12 +1,29 @@
-<svg version="1.1" id="origami_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" >
-[#-- Fancy origami crease line content to be included below --]
+[#-- Present content in component as table cells--]
+	<td>
+	[#-- Title and Image--]
+	<div  class="titleimage">
+	  [#if content.title?has_content]
+	    <h2>${content.title!}</h2>
+	  [/#if]
 
-	<g>
-  <rect height="30" width="20" />
-  <text style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
-  [#if content.desc?has_content]
-    ${cmsfn.decode(content).desc!}
-  [/#if]
-  </text>
-  </g>
-</svg>
+	  [#if content.image?has_content]
+	    [#assign image = damfn.getAsset(content.image)]
+	    [#assign imageLink = image.link]
+	    <img
+	      src='${imageLink!}'
+	      class='img-responsive'
+	      alt='${content.caption!"image"}'>
+	  [/#if]
+
+	</div>
+	</td>
+	<td>
+	[#-- Description --]
+	<div  class="description">
+
+	  [#if content.desc?has_content]
+	    ${cmsfn.decode(content).desc!}
+	  [/#if]
+
+	</div>
+	</td>

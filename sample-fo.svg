@@ -1,0 +1,27 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    div {
+      color: white;
+      font: 18px serif;
+      height: 100%;
+      overflow: auto;
+    }
+  </style>
+
+
+<circle r="150" cx="90" cy="90"/>
+  <!-- Common use case: embed HTML text into SVG -->
+    <foreignObject id="text68" x="50" y="70" width="160" height="160"  >
+  <style>
+    div {
+      color: white;
+      font: 18px serif;
+      height: 100%;
+      overflow: auto;
+    }
+  </style>
+       <div xmlns="http://www.w3.org/1999/xhtml">Magnolia is a Marketing Tool More text about magnolia.
+       </div>
+   </foreignObject>
+</svg>
+

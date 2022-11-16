@@ -18,39 +18,24 @@ model:
       type: String
       required: true
       i18n: true
-    - name: birthday
-      label: Birthday
-      type: Date
-    - name: member
-      label: Is a member
-      type: Boolean  #Types 'Decimal', 'Long' and 'Double' are also available.    
-
-    - name: phoneNumbers
-      label: Phone Numbers
-      type: PhoneNumber
-      multiple: true
-    - name: billingAddress
-      label: Billing Address
-      type: Address
-    - name: shippingAddress
-      label: Shipping Address
-      type: Address
-
-    subModels:
-    - name: PhoneNumber
-      properties:
-      - name: title
-        label: Title
-      - name: number
-        label: Number
-
-    - name: Address
-      properties:
-      - name: street
-        label: Street
-      - name: city
-        label: City
-      - name: postalCode
-        label: Postal Code
-      - name: country
-        label: Country
+    - name: description
+      label: Description
+      type: String
+    - name: image
+      label: Image
+      type: asset
+    - name: shape
+      label: Shape
+      options:
+        prism:
+          value: prism
+          label: Prism
+        cube:
+          value: cube
+          label: Cube
+        tetraahedron:
+          value: tetrahedron
+          label: Tetrahedron
+        exotic:
+          value: exotic
+          label: Exotic

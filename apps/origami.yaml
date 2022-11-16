@@ -1,0 +1,11 @@
+!content-type:origami
+name: origami
+label: Origami
+
+subApps:
+  detail:
+    label: Origami
+    form:
+      properties:
+        shape:
+          $type: radioButtonGroupField
