@@ -8,8 +8,7 @@
     <meta name="description" content="${content.description!""}" />
     <meta name="keywords" content="${content.keywords!""}" />
 
-    [#-- To load resources you can link them manually (e.g. line below) --]
-      [#-- <link rel="stylesheet" type="text/css" href="${ctx.contextPath}/.resources/magnolia-export-origami/webresources/css/bootstrap.css" media="all" /> --]
+      <link rel="stylesheet" type="text/css" href="${ctx.contextPath}/.resources/magnolia-export-origami/webresources/origami.css" media="all" /> 
       [#-- <script src="${ctx.contextPath}/.resources/magnolia-export-origami/webresources/js/jquery.js"></script> --]
     [#-- or via theme --]
       [#-- [#assign site = sitefn.site()!] --]
@@ -28,25 +27,34 @@
   <body class="prism-origami ${cmsfn.language()}">
 
     <div class="container">
-      <h1>prism-origami works!</h1>
-	<table>
+      [#-- <h1>prism-origami works!</h1> --]
+	<table class="origami-grid">
 	 [#if content.printgrouping?has_content && content.printgrouping?size > 0]
 	   [#list content.printgrouping as item]
 	     [#assign origami = cmsfn.contentById(item, "origami")!]
-	     <span class="label label-default">${origami.name!origami.@name!}</span>
+	     [#-- <span class="label label-default">${origami.name!origami.@name!}</span> --]
 		<tr>
 			<td></td>
-			<td>
+			<td class="face-front" >
+			 <div class="title-image">
 			  [#if origami.title?has_content]
-			    <h2>${origami.title!}</h2>
+			    <p>${origami.title!}</p>
 			  [/#if]
 			  [#if origami.image?has_content]
 			    [#-- Image rendering macro call here --] 
+			    [#assign imgItemKey = origami.image!]
+				[#if imgItemKey??]
+				    [#assign mythumbnailRendition = damfn.getRendition(imgItemKey, "thumbnail")!]
+				    [#if mythumbnailRendition??]
+					<img  src="${mythumbnailRendition.getLink()}"/>
+				    [/#if]
+				[/#if]
 			  [/#if]
+			  </div>
 			 </td>
-			 <td>
+			 <td class="face-rear" >
 			  [#if origami.description?has_content]
-			    <p>${origami.description!}</p>
+			    <p > ${origami.description!}</p>
 			  [/#if]
 			 </td>
 			<td></td>

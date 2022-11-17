@@ -1,0 +1,38 @@
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td {
+   width:200px;
+   height:200px;
+}
+
+.title-image{
+   float:center;
+   transform: rotate(0.25turn); 
+}
+
+.title-image > img{
+   width:30%;
+   height:40%;
+   float: none;
+}
+
+.title-image  > p{
+   width:70%%;
+   height:100%;
+   float:center;
+   font-size:1.5em;
+}
+.face-front {
+   padding: 0.5% 0.5% 0.5% 0.5%;
+}
+.face-rear {
+   padding: 0.5% 0.5% 0.5% 0.5%;
+}
+.face-rear > p{
+   font-size:1em;
+   float:center;
+   transform: rotate(0.75turn); 
+}
