@@ -4,9 +4,6 @@
 Why limit rendering to screens? Exploring rendering content on to origami
 -->
 
-
-## Features
-
 <!--
 Origami => Paper folding. Why not render content on to paper, fold it up in interesting ways, and make the content come alive?
 
@@ -44,6 +41,8 @@ This module uses the light module templates generated out of default prototype t
 
 
 The page, when printed on paper could be folded as origami displaying the CMS content of interest.
+
+Cube folding based on : https://www.youtube.com/watch?v=Pn9ROEqK0r4
 
 Marketers could even render content onto a scented origami craft paper; Fold them up and use them as a Digital/Physical Experience component. 
 
