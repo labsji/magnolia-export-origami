@@ -8,30 +8,81 @@
     <meta name="description" content="${content.description!""}" />
     <meta name="keywords" content="${content.keywords!""}" />
 
-    [#-- To load resources you can link them manually (e.g. line below) --]
-      [#-- <link rel="stylesheet" type="text/css" href="${ctx.contextPath}/.resources/magnolia-export-origami/webresources/css/bootstrap.css" media="all" /> --]
-      [#-- <script src="${ctx.contextPath}/.resources/magnolia-export-origami/webresources/js/jquery.js"></script> --]
-    [#-- or via theme --]
-      [#-- [#assign site = sitefn.site()!] --]
-      [#-- [#assign theme = sitefn.theme(site)!] --]
-      [#-- [#list theme.cssFiles as cssFile] --]
-      [#--   [#if cssFile.conditionalComment?has_content]<!--[if ${cssFile.conditionalComment}]>[/#if] --]
-      [#--     <link rel="stylesheet" type="text/css" href="${cssFile.link}" media="${cssFile.media}" /> --]
-      [#--   [#if cssFile.conditionalComment?has_content]<![endif]-->[/#if] --]
-      [#-- [/#list] --]
-      [#-- [#list theme.jsFiles as jsFile] --]
-      [#--   <script src="${jsFile.link}"></script> --]
-      [#-- [/#list] --]
-    [#-- uncomment next line to use resfn templating functions to load all css which matches a globbing pattern --]
-      [#-- ${resfn.css(["/magnolia-export-origami/.*css"])!} --]
+      <link rel="stylesheet" type="text/css" href="${ctx.contextPath}/.resources/magnolia-export-origami/webresources/origami.css" media="all" /> 
   </head>
-  <body class="cubic-origami ${cmsfn.language()}">
-
+  <body class="cube-origami ${cmsfn.language()}">
     <div class="container">
-      <h1>cubic-origami works!</h1>
+	<table class="origami-cube-grid">
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	 [#if content.printgrouping?has_content && content.printgrouping?size > 0]
+	   [#list content.printgrouping as item]
+	     [#assign origami = cmsfn.contentById(item, "origami")!]
+	     [#-- <span class="label label-default">${origami.name!origami.@name!}</span> --]
+	        [#if item?index == 0 ]
+		  <tr>
+		     <td></td>
+		     <td></td>
+		     <td></td>
+		     <td class="cube-face cube-face-four" >
+		      [@origami_cube_text content_node=origami /]
+		     </td>
+		  </tr>
+	       [/#if]
+	        [#if item?index == 1 ]
+		  <tr>
+		     <td class="cube-face" >
+		      [@origami_cube_image content_node=origami /]
+		     </td>
+		     <td class="cube-face" >
+		      [@origami_cube_text content_node=origami /]
+		     </td>
+		     <td class="cube-face" >
+		      [@origami_cube_image content_node=origami /]
+		     </td>
+		     <td></td>
+		  </tr>
+	       [/#if]
+	   [/#list]
+	 [/#if]
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+        </table>
     </div>
-
-    [#-- use resfn to load all js which matches the globbing pattern or link resources manually or via theme --]
-    [#-- ${resfn.js(["/magnolia-export-origami/.*js"])!} --]
   </body>
 </html>
+
+[#macro origami_cube_image content_node ]
+ [#assign origami=content_node /]
+ <div class="cube-image">
+  [#if origami.title?has_content]
+    <p>${origami.title!}</p>
+  [/#if]
+  [#if origami.image?has_content]
+    [#-- Image rendering macro call here --] 
+    [#assign imgItemKey = origami.image!]
+	[#if imgItemKey??]
+	    [#assign mythumbnailRendition = damfn.getRendition(imgItemKey, "thumbnail")!]
+	    [#if mythumbnailRendition??]
+		<img  src="${mythumbnailRendition.getLink()}"/>
+	    [/#if]
+	[/#if]
+  [/#if]
+  </div>
+[/#macro]
+[#macro origami_cube_text content_node ]
+ [#assign origami=content_node /]
+ <div class="cube-text">
+  [#if origami.description?has_content]
+    <p > ${origami.description!}</p>
+  [/#if]
+  </div>
+[/#macro]

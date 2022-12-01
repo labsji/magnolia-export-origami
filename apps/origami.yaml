@@ -7,5 +7,10 @@ subApps:
     label: Origami
     form:
       properties:
+        description:
+          $type: textField
+          label: Description
+          i18n: true
+          rows: 2
         shape:
           $type: radioButtonGroupField

@@ -28,7 +28,7 @@
 
     <div class="container">
       [#-- <h1>prism-origami works!</h1> --]
-	<table class="origami-grid">
+	<table class="origami-prism-grid">
 	 [#if content.printgrouping?has_content && content.printgrouping?size > 0]
 	   [#list content.printgrouping as item]
 	     [#assign origami = cmsfn.contentById(item, "origami")!]

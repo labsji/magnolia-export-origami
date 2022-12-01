@@ -1,4 +1,4 @@
-label: cubic-origami
+label: Cube Origami
 form:
   properties:
     title:
@@ -28,6 +28,15 @@ form:
       label: Description
       i18n: true
       rows: 5
+    printgrouping:
+      label: PrintGrouping
+      $type: jcrMultiValueField
+      field:
+        $type: linkField
+        label: ''
+        datasource:
+          $type: jcrDatasource
+          workspace: origami
   layout:
     $type: tabbedLayout
     tabs:
@@ -43,3 +52,7 @@ form:
         fields:
           - name: keywords
           - name: description
+      tabPrintGrouping:
+        label: PrintGrouping
+        fields:
+          - name: printgrouping

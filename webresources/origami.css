@@ -4,8 +4,21 @@ table, th, td {
 }
 
 td {
-   width:200px;
-   height:200px;
+   width:220px;
+   height:220px;
+}
+@media print {
+	.origami-prism-grid.td{
+		width: 64mm;
+		height:66mm;
+	}
+	.origami-cube-grid.td{
+		width: 69mm;
+		height:69mm;
+	}
+	.origami-cube-grid{
+		height:100%;
+	}
 }
 
 .title-image{
@@ -23,7 +36,7 @@ td {
    width:70%%;
    height:100%;
    float:center;
-   font-size:1.5em;
+   font-size:1.1em;
 }
 .face-front {
    padding: 0.5% 0.5% 0.5% 0.5%;
@@ -32,7 +45,30 @@ td {
    padding: 0.5% 0.5% 0.5% 0.5%;
 }
 .face-rear > p{
-   font-size:1em;
+   font-size:.95em;
+   float:center;
+   transform: rotate(0.75turn); 
+}
+.cube-image > img{
+   width:30%;
+   height:40%;
+   float: none;
+}
+
+.cube-image  > p{
+   width:70%%;
+   height:100%;
+   float:center;
+   font-size:1.3em;
+}
+.cube-face {
+   padding: 0.5% 0.5% 0.5% 0.5%;
+   font-size:.95em;
+   float:center;
+}
+.cube-face-four{
+   padding: 0.5% 0.5% 0.5% 0.5%;
+   font-size:.95em;
    float:center;
    transform: rotate(0.75turn); 
 }
