@@ -72,3 +72,62 @@ td {
    float:center;
    transform: rotate(0.75turn); 
 }
+.tetra-face {
+  width: 0px;
+  height: 0px;
+  border-style: inset;
+  border-width: 0 220px 346.4px 220px;
+  border-color: transparent transparent #D3D3D3 transparent;
+  float: left;
+  transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+}
+
+.tetra-face p {
+  text-align: center;
+  top: 84px;
+  left: -47px;
+  position: relative;
+  width: 104px;
+  height: 112px;
+  margin: 0px;
+}
+.tetra-face img {
+  top: 140px;
+  left: -47px;
+  position: relative;
+  width: 108px !important; 
+  height: 80px !important;
+  margin: 0px;
+}
+
+.origami-image > img{
+   width:30%;
+   height:40%;
+   float: none;
+}
+
+.origami-image  > p{
+   width:70%%;
+   height:100%;
+   float:center;
+   font-size:1.1em;
+}
+
+.origami-text {
+   padding: 0.5% 0.5% 0.5% 0.5%;
+   font-size:.95em;
+   float:center;
+}
+.tetra-face1 {
+   transform: translate(25%);
+}
+.tetra-face2 {
+   transform: rotate(0.65125turn)  translate(-12.5%, -28.125%);
+}
+.tetra-face3 {
+   transform: rotate(0.34875turn) translate(12.5%, -28.125%); 
+}
